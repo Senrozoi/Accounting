@@ -1,3 +1,3 @@
 ﻿Public Class Liabilities
-    Inherits Account
+    Inherits AccountBase
 End Class

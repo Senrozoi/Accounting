@@ -1,3 +1,3 @@
 ﻿Public Class Revenue
-    Inherits Account
+    Inherits AccountBase
 End Class

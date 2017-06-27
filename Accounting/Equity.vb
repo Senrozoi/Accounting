@@ -1,4 +1,4 @@
 ﻿Public Class Equity
-    Inherits Account
+    Inherits AccountBase
 
 End Class

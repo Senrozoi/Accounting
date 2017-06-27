@@ -1,5 +1,5 @@
 ﻿Public Class Asset
-    Inherits Account
+    Inherits AccountBase
 
 
 End Class

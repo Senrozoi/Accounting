@@ -61,8 +61,9 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account.vb" />
+    <Compile Include="AccountBase.vb" />
     <Compile Include="Asset.vb" />
+    <Compile Include="DetailAccount.vb" />
     <Compile Include="Entry.vb" />
     <Compile Include="Equity.vb" />
     <Compile Include="Expense.vb" />

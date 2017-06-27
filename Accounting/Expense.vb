@@ -1,3 +1,3 @@
 ﻿Public Class Expense
-    Inherits Account
+    Inherits AccountBase
 End Class
