@@ -1,6 +1,6 @@
 ﻿Imports Accounting
 
-Public Class AccountBase
+Public MustInherit Class AccountBase
 
     Private _Entrys As New List(Of Entry)
 
@@ -56,6 +56,14 @@ Public Class AccountBase
     Friend Sub Add(ByVal NewAccount As DetailAccount)
         _ChildAccounts.Add(NewAccount)
     End Sub
+
+
+    ''' <summary>
+    ''' 取引オブジェクトが仕訳の貸借一致確認や、量を計算する際にAmountへの係数となる関数を返します。
+    ''' </summary>
+    ''' <returns>仕訳オブジェクトが貸方に来る場合は引数をそのまま、借方の場合は引数の正負を逆にする関数Func(Of Decimal, Decimal)を返す</returns>
+    Friend MustOverride Function GetTransactionsBalanceCalculator() As Func(Of Decimal, Decimal)
+
 
 
 End Class
