@@ -64,7 +64,9 @@
     <Compile Include="Account.vb" />
     <Compile Include="Asset.vb" />
     <Compile Include="Entry.vb" />
+    <Compile Include="Equity.vb" />
     <Compile Include="Expense.vb" />
+    <Compile Include="Journal.vb" />
     <Compile Include="Liabilities.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -81,6 +83,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Revenue.vb" />
     <Compile Include="Transaction.vb" />
   </ItemGroup>
   <ItemGroup>

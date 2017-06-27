@@ -98,6 +98,7 @@
     </Compile>
     <Compile Include="TransactionTest.vb" />
     <Compile Include="AccountTest.vb" />
+    <Compile Include="JournalTest.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">

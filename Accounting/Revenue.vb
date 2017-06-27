@@ -1,5 +1,3 @@
-﻿Public Class Asset
+﻿Public Class Revenue
     Inherits Account
-
-
 End Class
