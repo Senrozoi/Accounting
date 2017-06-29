@@ -35,6 +35,9 @@ Public MustInherit Class AccountBase
         End Get
     End Property
 
+    Friend Sub Post(Entry As Entry)
+        _Entrys.Add(Entry)
+    End Sub
 
 
     ''' <summary>

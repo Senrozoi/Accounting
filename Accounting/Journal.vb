@@ -1,7 +1,15 @@
 ﻿Imports Accounting
 
 Public Class Journal
-    Public Sub Post(現金出資取引 As Transaction)
-        Throw New NotImplementedException()
+    Private _Transactions As New List(Of Transaction)
+
+    Public Sub Post(Transaction As Transaction)
+        If _Transactions.Contains(Transaction) Then
+            Throw New ArgumentException("記帳済の取引は記帳できません。")
+        End If
+        _Transactions.Add(Transaction)
+        For Each Entry In Transaction.Entrys
+            Entry.Post()
+        Next
     End Sub
 End Class

@@ -50,6 +50,17 @@
         End Get
     End Property
 
+    ''' <summary>
+    ''' このインスタンスに含まれる仕訳を取得します。
+    ''' </summary>
+    ''' <value></value>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Public ReadOnly Property Entrys As IEnumerable(Of Entry)
+        Get
+            Return _Entrys
+        End Get
+    End Property
 
     ''' <summary>
     ''' このインスタンスが保持するエントリーの貸借が一致することを確認します。

@@ -42,8 +42,12 @@ Public Class DetailAccount
         End Get
     End Property
 
-
-    Public Function EntryFactry(v As Integer) As Entry
-        Throw New NotImplementedException()
+    ''' <summary>
+    ''' この勘定科目に転記するための仕訳オブジェクトを生成します。
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Public Function EntryFactry(Amount As Decimal) As Entry
+        Return New Entry(_Owner, _Code, Amount)
     End Function
 End Class

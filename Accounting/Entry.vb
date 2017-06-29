@@ -20,6 +20,14 @@ Public Class Entry
     End Sub
 
     ''' <summary>
+    ''' 勘定に記帳します。
+    ''' </summary>
+    ''' <remarks></remarks>
+    Friend Sub Post()
+        _PostAccount.Post(Me)
+    End Sub
+
+    ''' <summary>
     ''' このインスタンスの科目ｺｰﾄﾞを取得します。
     ''' </summary>
     ''' <value></value>
