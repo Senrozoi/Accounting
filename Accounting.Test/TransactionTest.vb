@@ -69,4 +69,23 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
         Assert.Fail("エントリ数不足例外が発生しなければなりません。")
     End Sub
 
+
+    <TestMethod()>
+    <ExpectedException(GetType(System.ArgumentException))>
+    Public Sub 未登録勘定科目使用テスト()
+
+        Dim 資産 As New Asset
+        資産.Add(1, "現金")
+
+        Dim 貸方 As New Entry(資産, 2, -10)
+        Dim 借方 As New Entry(資産, 1, 10)
+
+        Dim entrys As New List(Of Entry)
+        entrys.Add(貸方)
+        entrys.Add(借方)
+
+        Dim 取引 As New Transaction(entrys, Now, "未登録勘定科目使用取引")
+        Assert.Fail("未登録勘定科目使用例外が発生しなければなりません。")
+    End Sub
+
 End Class
