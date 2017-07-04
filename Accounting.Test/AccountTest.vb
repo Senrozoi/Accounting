@@ -7,8 +7,6 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
         Dim 資産 As New Asset
         資産.Add(1, "現金")
         Assert.AreEqual(資産.Accounts.Count, 1)
-        Assert.AreEqual(資産.Accounts.First.Title, "現金")
-        Assert.AreEqual(資産.Accounts.First.Code, 1)
     End Sub
 
     <TestMethod()>
@@ -29,7 +27,6 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
 
         '作成方法を問わず、整合性が維持できていることを確認する。
         Assert.AreEqual(資産.Accounts.Count, 2)
-        Assert.AreEqual(資産.Balance, CDec(0))
     End Sub
 
 
@@ -47,7 +44,6 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
 
         '勘定から勘定科目が削除されていないことを確認する。
         Assert.AreEqual(負債.Accounts.Count, 1)
-
     End Sub
 
 End Class
