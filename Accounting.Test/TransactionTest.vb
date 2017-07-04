@@ -4,7 +4,6 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
 
     Private SetUpAsset As New Asset
 
-
     <TestInitialize()> Public Sub MyTestInitialize()
         SetUpAsset.Add(1, "現金")
     End Sub
@@ -12,7 +11,7 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
 
 
     <TestMethod()> Public Sub 取引金額テスト()
-        Dim 資産 As New Asset
+        Dim 資産 = SetUpAsset
 
 
         Dim 貸方 As New Entry(資産.GetItem(1), 10000)
@@ -27,7 +26,7 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
     End Sub
 
     <TestMethod()> Public Sub 複数エントリ取引作成テスト()
-        Dim 資産 As New Asset
+        Dim 資産 = SetUpAsset
         Dim 負債 As New Liabilities
         負債.Add(1, "借入金")
         Dim 費用 As New Expense
@@ -51,7 +50,7 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
     <ExpectedException(GetType(System.ArgumentException))>
     Public Sub 取引貸借不一致テスト()
 
-        Dim 資産 As New Asset
+        Dim 資産 = SetUpAsset
         Dim 貸方 As New Entry(資産.GetItem(1), 10000)
         Dim 借方 As New Entry(資産.GetItem(1), -1000)
 
@@ -69,7 +68,7 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
     <ExpectedException(GetType(System.ArgumentException))>
     Public Sub 取引エントリ数不足テスト()
 
-        Dim 資産 As New Asset
+        Dim 資産 = SetUpAsset
         Dim 貸方 As New Entry(資産.GetItem(1), 0)
 
         Dim entrys As New List(Of Entry)
@@ -84,7 +83,7 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
     <ExpectedException(GetType(System.ArgumentException))>
     Public Sub 未登録勘定科目使用テスト()
 
-        Dim 資産 As New Asset
+        Dim 資産 = SetUpAsset
         資産.Add(1, "現金")
 
         Dim 貸方 As New Entry(資産.GetItem(1), -10)
