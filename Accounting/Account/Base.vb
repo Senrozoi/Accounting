@@ -1,7 +1,7 @@
 ﻿Imports Accounting
 
 Namespace Account
-    Public MustInherit Class AccountBase
+    Public MustInherit Class Base
 
         Private _Entrys As New List(Of Entry)
 

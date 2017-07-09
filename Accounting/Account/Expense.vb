@@ -1,6 +1,6 @@
 ﻿Namespace Account
     Public Class Expense
-        Inherits AccountBase
+        Inherits Base
 
         Friend Overrides Function GetTransactionsBalanceCalculator() As Func(Of Decimal, Decimal)
             Return (Function(D) D)
