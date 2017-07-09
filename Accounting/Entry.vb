@@ -4,16 +4,14 @@ Public Class Entry
 
 
 
-    Private _PostAccount As AccountBase
-    Private _AccountCode As Integer
+    Private _PostAccount As DetailAccount
     Private _Amount As Decimal
 
 
     Private _BalanceCalculator As Func(Of Decimal, Decimal)
 
-    Public Sub New(PostAccount As AccountBase, AccountCode As Integer, Amount As Integer)
+    Public Sub New(PostAccount As DetailAccount, Amount As Integer)
         Me._PostAccount = PostAccount
-        Me._AccountCode = AccountCode
         Me._Amount = Amount
         Me._BalanceCalculator = PostAccount.GetTransactionsBalanceCalculator()
 
@@ -27,17 +25,7 @@ Public Class Entry
         _PostAccount.Post(Me)
     End Sub
 
-    ''' <summary>
-    ''' このインスタンスの科目ｺｰﾄﾞを取得します。
-    ''' </summary>
-    ''' <value></value>
-    ''' <returns></returns>
-    ''' <remarks></remarks>
-    Public ReadOnly Property AccountCode As Integer
-        Get
-            Return _AccountCode
-        End Get
-    End Property
+
 
     ''' <summary>
     ''' このインスタンスで取り扱う金額を取得します。

@@ -16,7 +16,6 @@ Public Class DetailAccount
         _Owner.Add(Me)
     End Sub
 
-
     ''' <summary>
     ''' このインスタンスの勘定科目ｺｰﾄﾞを取得します。
     ''' </summary>
@@ -48,6 +47,22 @@ Public Class DetailAccount
     ''' <returns></returns>
     ''' <remarks></remarks>
     Public Function EntryFactry(Amount As Decimal) As Entry
-        Return New Entry(_Owner, _Code, Amount)
+        Return New Entry(Me, Amount)
     End Function
+
+    ''' <summary>
+    ''' 勘定科目が生成する、貸借計算用の式を返します。
+    ''' </summary>
+    ''' <returns>仕訳オブジェクトが貸方に来る場合は引数をそのまま、借方の場合は引数の正負を逆にする関数Func(Of Decimal, Decimal)を返す</returns>
+    Friend Function GetTransactionsBalanceCalculator() As Func(Of Decimal, Decimal)
+        Return _Owner.GetTransactionsBalanceCalculator
+    End Function
+
+    ''' <summary>
+    ''' この勘定科目に仕訳を転記します。
+    ''' </summary>
+    ''' <param name="Entry"></param>
+    Friend Sub Post(Entry As Entry)
+        _Owner.Post(Entry)
+    End Sub
 End Class

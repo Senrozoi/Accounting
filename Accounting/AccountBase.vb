@@ -51,6 +51,15 @@ Public MustInherit Class AccountBase
     End Sub
 
 
+
+    Public Overloads Function GetItem(Code As Integer) As DetailAccount
+        Return _ChildAccounts.Single(Function(A) A.Code = Code)
+    End Function
+
+    Public Overloads Function GetItem(Title As String) As DetailAccount
+        Return _ChildAccounts.First(Function(A) A.Title = Title)
+    End Function
+
     ''' <summary>
     ''' 指定された明細勘定をこのインスタンスに追加します。
     ''' </summary>
