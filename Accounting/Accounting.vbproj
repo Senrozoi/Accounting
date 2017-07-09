@@ -63,7 +63,7 @@
   <ItemGroup>
     <Compile Include="AccountBase.vb" />
     <Compile Include="Asset.vb" />
-    <Compile Include="DetailAccount.vb" />
+    <Compile Include="AccountItem.vb" />
     <Compile Include="Entry.vb" />
     <Compile Include="Equity.vb" />
     <Compile Include="Expense.vb" />
