@@ -1,11 +1,11 @@
-﻿Imports Accounting
+﻿Imports Accounting.Account
 
 Public Class AccountItem
-    Private _Owner As AccountBase
+    Private _Owner As Base
     Private _Code As Integer
     Private _Title As String
 
-    Public Sub New(Owner As AccountBase, Code As Integer, Title As String)
+    Public Sub New(Owner As Base, Code As Integer, Title As String)
         If Owner.Accounts.Where(Function(A) A._Code = Code).Any Then
             Throw New ArgumentException("既に使用されている勘定科目ｺｰﾄﾞです。")
         End If

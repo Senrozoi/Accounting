@@ -4,7 +4,7 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
 <TestClass()> Public Class AccountTest
 
     <TestMethod()> Public Sub 勘定科目追加テスト()
-        Dim 資産 As New Asset
+        Dim 資産 As New Account.Asset
         資産.Add(1, "現金")
         Assert.AreEqual(資産.Accounts.Count, 1)
     End Sub
@@ -12,7 +12,7 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
     <TestMethod()>
     <ExpectedException(GetType(ArgumentException))>
     Public Sub 勘定科目重複テスト()
-        Dim 資産 As New Asset
+        Dim 資産 As New Account.Asset
         資産.Add(1, "現金")
         資産.Add(1, "現金")
         Assert.Fail("勘定科目重複例外が発生しなければなりません。")
@@ -20,7 +20,7 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
 
     <TestMethod()>
     Public Sub 勘定科目不正追加テスト()
-        Dim 資産 As New Asset
+        Dim 資産 As New Account.Asset
         資産.Add(1, "現金")
         '勘定のメソッドを通さずに勘定科目のインスタンスを作成
         Dim 不正勘定科目 As New AccountItem(資産, 2, "貯金")
@@ -32,7 +32,7 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
 
     <TestMethod()>
     Public Sub 勘定科目不正操作不能確認テスト()
-        Dim 負債 As New Liabilities
+        Dim 負債 As New Account.Liabilities
         負債.Add(1, "預り金")
 
         '要約勘定から取得した勘定科目リストを操作する。
