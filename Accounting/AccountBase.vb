@@ -4,7 +4,7 @@ Public MustInherit Class AccountBase
 
     Private _Entrys As New List(Of Entry)
 
-    Private _ChildAccounts As New List(Of DetailAccount)
+    Private _ChildAccounts As New List(Of AccountItem)
 
 
 
@@ -13,7 +13,7 @@ Public MustInherit Class AccountBase
     ''' </summary>
     ''' <returns></returns>
     ''' <remarks></remarks>
-    Public ReadOnly Property Accounts() As IEnumerable(Of DetailAccount)
+    Public ReadOnly Property Accounts() As IEnumerable(Of AccountItem)
         Get
             Return _ChildAccounts.ToList.AsEnumerable
         End Get
@@ -47,16 +47,16 @@ Public MustInherit Class AccountBase
     ''' <param name="AccountName"></param>
     ''' <remarks></remarks>
     Public Sub Add(ByVal AccountCode As Integer, ByVal AccountName As String)
-        Dim NewAccount As New DetailAccount(Me, AccountCode, AccountName)
+        Dim NewAccount As New AccountItem(Me, AccountCode, AccountName)
     End Sub
 
 
 
-    Public Overloads Function GetItem(Code As Integer) As DetailAccount
+    Public Overloads Function GetItem(Code As Integer) As AccountItem
         Return _ChildAccounts.Single(Function(A) A.Code = Code)
     End Function
 
-    Public Overloads Function GetItem(Title As String) As DetailAccount
+    Public Overloads Function GetItem(Title As String) As AccountItem
         Return _ChildAccounts.First(Function(A) A.Title = Title)
     End Function
 
@@ -65,7 +65,7 @@ Public MustInherit Class AccountBase
     ''' </summary>
     ''' <param name="NewAccount"></param>
     ''' <remarks>明細勘定から呼び出されることを想定したメソッドです。</remarks>
-    Friend Sub Add(ByVal NewAccount As DetailAccount)
+    Friend Sub Add(ByVal NewAccount As AccountItem)
         _ChildAccounts.Add(NewAccount)
     End Sub
 

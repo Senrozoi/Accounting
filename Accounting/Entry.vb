@@ -4,13 +4,13 @@ Public Class Entry
 
 
 
-    Private _PostAccount As DetailAccount
+    Private _PostAccount As AccountItem
     Private _Amount As Decimal
 
 
     Private _BalanceCalculator As Func(Of Decimal, Decimal)
 
-    Public Sub New(PostAccount As DetailAccount, Amount As Integer)
+    Public Sub New(PostAccount As AccountItem, Amount As Integer)
         Me._PostAccount = PostAccount
         Me._Amount = Amount
         Me._BalanceCalculator = PostAccount.GetTransactionsBalanceCalculator()

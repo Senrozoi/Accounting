@@ -1,6 +1,6 @@
 ﻿Imports Accounting
 
-Public Class DetailAccount
+Public Class AccountItem
     Private _Owner As AccountBase
     Private _Code As Integer
     Private _Title As String
