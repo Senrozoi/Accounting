@@ -1,4 +1,4 @@
-﻿Imports Accounting
+﻿Imports Accounting.Account
 
 Public Class AccountItem
     Private _Owner As AccountBase

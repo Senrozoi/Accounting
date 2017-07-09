@@ -5,10 +5,10 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
 
     <TestMethod()> Public Sub 取引を記帳する()
 
-        Dim 資産 As New Asset
+        Dim 資産 As New Account.Asset
         資産.Add(1, "現金")
 
-        Dim 資本 As New Equity
+        Dim 資本 As New Account.Equity
         資本.Add(1, "出資金")
 
         Dim 出資金 As Entry = 資本.Accounts.Where(Function(A) A.Code = 1).Single.EntryFactry(10000)
@@ -30,10 +30,10 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
     Public Sub 重複取引を記帳する()
 
 
-        Dim 資産 As New Asset
+        Dim 資産 As New Account.Asset
         資産.Add(1, "現金")
 
-        Dim 収益 As New Revenue
+        Dim 収益 As New Account.Revenue
         収益.Add(1, "販売益")
 
 

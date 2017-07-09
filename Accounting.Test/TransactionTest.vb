@@ -2,7 +2,7 @@
 Imports Microsoft.VisualStudio.TestTools.UnitTesting
 <TestClass()> Public Class TransactionTest
 
-    Private SetUpAsset As New Asset
+    Private SetUpAsset As New Account.Asset
 
     <TestInitialize()> Public Sub MyTestInitialize()
         SetUpAsset.Add(1, "現金")
@@ -27,9 +27,9 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
 
     <TestMethod()> Public Sub 複数エントリ取引作成テスト()
         Dim 資産 = SetUpAsset
-        Dim 負債 As New Liabilities
+        Dim 負債 As New Account.Liabilities
         負債.Add(1, "借入金")
-        Dim 費用 As New Expense
+        Dim 費用 As New Account.Expense
         費用.Add(1, "借入金利息")
 
         Dim 現金 As New Entry(資産.GetItem(1), -10000)
